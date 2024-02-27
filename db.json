@@ -1,30 +1,52 @@
 {
     "harvest_source": [
         {
-            "config": {
-                "url": "http://example.com",
-                "schema_validation_type": "strict"
-            },
-            "frequency": "daily",
             "id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
             "name": "Example Harvest Source",
             "notification_emails": [
-                "admin@example.com"
+                "admin@example.com",
+                "foo@example.com"
             ],
-            "organization_name": "Example Organization"
+            "organization_name": "Example Organization",
+            "frequency": "daily",
+            "url": "http://example.com",
+            "schema_type": "dcatus",
+            "source_type": "datajson"
         }
     ],
     "harvest_job": [
         {
-            "date_created": "Wed, 21 Feb 2024 17:52:26 GMT",
-            "date_finished": "Wed, 21 Feb 2024 17:52:26 GMT",
-            "harvest_source": "146cb9f3-282f-432b-8f9b-912f28e83ede",
-            "id": "d96bd820-05b2-4ce7-ab0b-38242cb23dde",
+            "date_created": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "date_finished": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "harvest_source_id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
+            "id": "43b29488-d42f-4c85-a027-1cc517505524",
             "records_added": 100,
-            "records_updated": 20,
             "records_deleted": 5,
             "records_errored": 3,
-            "records_ignored": 1
+            "records_ignored": 1,
+            "records_updated": 20
+        },
+        {
+            "date_created": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "date_finished": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "harvest_source_id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
+            "id": "43b29488-d42f-4c85-a027-1cc517505524",
+            "records_added": 100,
+            "records_deleted": 5,
+            "records_errored": 3,
+            "records_ignored": 1,
+            "records_updated": 20
+        },
+        {
+            "date_created": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "date_finished": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "harvest_source_id": "4ca2b39b-f9f0-41d4-89c2-7af300f7ba9a",
+            "id": "6689abce-2a43-41b3-bc17-a6db5f667942",
+            "records_added": 100,
+            "records_deleted": 5,
+            "records_errored": 3,
+            "records_ignored": 1,
+            "records_updated": 20
         }
     ],
     "harvest_error": [
@@ -49,10 +71,10 @@
             "type": "Validation Error"
         }
     ],
-    "organizations": [
+    "organization": [
         {
             "id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
-            "name": "Example Harvest Source"
+            "name": "Example Organization"
         }
     ]
 }

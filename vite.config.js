@@ -24,7 +24,7 @@ export default defineConfig({
 					dest: "static/vendor/uswds",
 				},
 			],
-			hook: 'writeBundle' // notice here			
+			hook: 'writeBundle' // TODO: is this the right hook?
 		})
 	]
 });
