@@ -7,25 +7,37 @@
 <div class="wrapper">
     {#if !data.harvest_source.id}
         <h2>Whooops!</h2>
-        <p>Looks like you navigated to an org that doesn't exist.</p>
+        <p>Looks like you navigated to a source that doesn't exist.</p>
         <p>You passed orgId: {data.params.orgId}, sourceId: {data.params.sourceId}</p>
     {:else}
         <h1>{data.harvest_source.name}</h1>
         <h2>Harvest Source Config</h2>
         <div class="config-table">
-            <p><b>Url:</b> <a href={data.harvest_source.url}>{data.harvest_source.url}</a></p>
-            <p><b>Name:</b> {data.harvest_source.name}</p>
             <p><b>Id:</b> {data.harvest_source.id}</p>
+            <p><b>Name:</b> {data.harvest_source.name}</p>
+            <p><b>Url:</b> <a href={data.harvest_source.url}>{data.harvest_source.url}</a></p>
             <p><b>Notification Emails:</b> {data.harvest_source.notification_emails}</p>
             <p><b>Organization Name:</b> {data.harvest_source.organization_name}</p>
             <p><b>Frequency:</b> {data.harvest_source.frequency}</p>
             <p><b>Schema Type:</b> {data.harvest_source.schema_type}</p>
             <p><b>Source Type:</b> {data.harvest_source.source_type}</p>
         </div>
-
         <h2>Harvest Jobs</h2>
+        <p>
+            <a href="/organization/{data.params.orgId}/source/{data.params.sourceId}/job/{data.harvest_jobs[0].id}"
+                >Last Job Status:</a
+            >
+            <svg
+                class="usa-icon align-middle {data.harvest_jobs[0].records_errored == 0 ? 'check' : 'cancel'}"
+                aria-hidden="true"
+                focusable="false"
+                role="img"
+            >
+                <use xlink:href="/vendor/uswds/img/sprite.svg#{data.harvest_jobs[0].records_errored == 0 ? 'check' : 'cancel'}"
+                ></use>
+            </svg>
+        </p>
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-        <!-- #TODO: fix this err -->
         <div class="usa-table-container--scrollable" tabindex="0">
             <table class="usa-table usa-table--striped">
                 <caption> Harvest Jobs for Harvest Source Id: {data.harvest_source.id} </caption>
@@ -123,4 +135,14 @@
 </div>
 
 <style lang="scss">
+    .align-middle {
+        vertical-align: middle;
+        top: -1px;
+        &.check {
+            color: green;
+        }
+        &.cancel {
+            color: red;
+        }
+    }
 </style>
