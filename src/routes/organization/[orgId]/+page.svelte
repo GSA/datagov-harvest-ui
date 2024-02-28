@@ -38,10 +38,10 @@
                         <tr>
                             <th scope="row"><a href="/organization/{data.params.orgId}/source/{source.id}">{source.id}</a></th>
                             <td data-sort-value={source.date_created}> {source.name}</td>
+                            <td data-sort-value={source.records_errored}><a href={source.url}>{source.url}</a></td>
                             <td data-sort-value={source.date_finished}>{source.notification_emails} </td>
                             <td data-sort-value={source.records_added}>{source.organization_id}</td>
                             <td data-sort-value={source.records_deleted}>{source.frequency}</td>
-                            <td data-sort-value={source.records_errored}><a href={source.url}>{source.url}</a></td>
                             <td data-sort-value={source.records_ignored}>{source.schema_type}</td>
                             <td data-sort-value={source.records_updated}>{source.source_type}</td>
                         </tr>

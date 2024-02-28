@@ -16,8 +16,8 @@
     ],
     "harvest_job": [
         {
-            "date_created": "Mon, 26 Feb 2024 14:20:45 GMT",
-            "date_finished": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "date_created": "Tues, 27 Feb 2024 14:20:45 GMT",
+            "date_finished": "Tues, 27 Feb 2024 14:20:45 GMT",
             "harvest_source_id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
             "id": "43b29488-d42f-4c85-a027-1cc517505524",
             "records_added": 100,
@@ -31,10 +31,10 @@
             "date_finished": "Mon, 26 Feb 2024 14:20:45 GMT",
             "harvest_source_id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
             "id": "43b29488-d42f-4c85-a027-1cc517505524",
-            "records_added": 100,
-            "records_deleted": 5,
-            "records_errored": 3,
-            "records_ignored": 1,
+            "records_added": 50,
+            "records_deleted": 2,
+            "records_errored": 8,
+            "records_ignored": 10,
             "records_updated": 20
         },
         {
@@ -56,8 +56,8 @@
             "id": "5972c38f-b14e-445d-99ec-2ca8fd9db0c9",
             "message": "Invalid data format.",
             "record_id": "record123",
-            "record_reported_id": "recordXYZ",
-            "severity": "ERROR",
+            "record_reported_id": "recordTUV",
+            "severity": "WARN",
             "type": "Validation Error"
         },
         {
@@ -65,7 +65,7 @@
             "harvest_job_id": "43b29488-d42f-4c85-a027-1cc517505524",
             "id": "817a9466-3090-4c85-8275-fcc3e330f67c",
             "message": "Invalid data format.",
-            "record_id": "record123",
+            "record_id": "record456",
             "record_reported_id": "recordXYZ",
             "severity": "ERROR",
             "type": "Validation Error"
