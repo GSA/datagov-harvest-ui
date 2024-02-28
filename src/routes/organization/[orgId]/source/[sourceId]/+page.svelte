@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script>
     /** @type {import('./$types').PageData} */
     export let data;
     console.log(data);
@@ -74,63 +74,6 @@
             </table>
             <div class="usa-sr-only usa-table__announcement-region" aria-live="polite"></div>
         </div>
-
-        <!-- svelte-ignore a11y-no-noninteractive-tabindex
-        <div class="usa-table-container--scrollable" tabindex="0">
-            <table class="usa-table usa-table--borderless">
-                <caption> Sortable borderless table with various content types </caption>
-                <thead>
-                    <tr>
-                        <th data-sortable scope="col" role="columnheader">Alphabetical</th>
-                        <th data-sortable scope="col" role="columnheader">Month</th>
-                        <th data-sortable scope="col" role="columnheader">Percent</th>
-                        <th data-sortable scope="col" role="columnheader">Count</th>
-                        <th data-sortable scope="col" role="columnheader">Rank (Ordinal)</th>
-                        <th data-sortable scope="col" role="columnheader">Rank (Cardinal)</th>
-                        <th data-sortable scope="col" role="columnheader">Unix Timestamp</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Tango</th>
-                        <td data-sort-value="3">March</td>
-                        <td data-sort-value="0.206" class="font-mono-sm text-tabular text-right"> 20.6% </td>
-                        <td data-sort-value="23612" class="font-mono-sm text-tabular text-right"> 23,612 </td>
-                        <td data-sort-value="3">Third</td>
-                        <td data-sort-value="3">3rd</td>
-                        <td data-sort-value="1332884673452">March 27, 2012</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Foxtrot</th>
-                        <td data-sort-value="4">April</td>
-                        <td data-sort-value="0.026" class="font-mono-sm text-tabular text-right"> 2.6% </td>
-                        <td data-sort-value="-32" class="font-mono-sm text-tabular text-right"> -32 </td>
-                        <td data-sort-value="1">First</td>
-                        <td data-sort-value="1">1st</td>
-                        <td data-sort-value="1617974313232">April 9, 2021</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Hilo</th>
-                        <td data-sort-value="1">January</td>
-                        <td data-sort-value="-0.036" class="font-mono-sm text-tabular text-right"> -3.6% </td>
-                        <td data-sort-value="0.002" class="font-mono-sm text-tabular text-right"> 0.002 </td>
-                        <td data-sort-value="2">Second</td>
-                        <td>2nd</td>
-                        <td data-sort-value="1611169964684">January 20, 2021</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Bravo</th>
-                        <td data-sort-value="12">December</td>
-                        <td data-sort-value="-3.006" class="font-mono-sm text-tabular text-right"> -300.6% </td>
-                        <td data-sort-value="0" class="font-mono-sm text-tabular text-right"> 0 </td>
-                        <td data-sort-value="4">Fourth</td>
-                        <td data-sort-value="4">4th</td>
-                        <td data-sort-value="1608114345343">December 16, 2020</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="usa-sr-only usa-table__announcement-region" aria-live="polite"></div>
-        </div> -->
     {/if}
 </div>
 
