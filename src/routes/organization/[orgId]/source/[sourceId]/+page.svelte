@@ -2,7 +2,6 @@
     /** @type {import('./$types').PageData} */
     export let data;
     console.log(data);
-    console.log(data.chartData);
     import { Line } from 'svelte-chartjs';
     import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale } from 'chart.js';
 

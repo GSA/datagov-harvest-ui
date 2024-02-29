@@ -45,6 +45,5 @@ export async function load({ fetch, params }) {
 		labels: harvest_jobs.reduce((accum, job) => accum = [...accum, job.date_finished], []),
 		datasets: rawChartData
 	}
-	console.log(chartData)
 	return { harvest_source, harvest_jobs, chartData, params }
 }

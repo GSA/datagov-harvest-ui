@@ -7,7 +7,7 @@
 <div class="wrapper">
     {#if !data.harvest_job.id}
         <h2>Whooops!</h2>
-        <p>Looks like you navigated to an org that doesn't exist.</p>
+        <p>Looks like you navigated to a job that doesn't exist.</p>
         <p>You passed orgId: {data.params.orgId}, sourceId: {data.params.sourceId}, jobId: {data.params.orgId}</p>
     {:else}
         <h1>Details for Harvest Job Id: {data.harvest_job.id}</h1>
