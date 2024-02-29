@@ -23,6 +23,14 @@ export default defineConfig({
 					src: "node_modules/@uswds/uswds/dist/img",
 					dest: "static/vendor/uswds",
 				},
+				{
+					src: "node_modules/chart.js/dist/chart.umd.js",
+					dest: "static/vendor/chartjs",
+				},
+				{
+					src: "node_modules/chart.js/dist/chart.umd.js.map",
+					dest: "static/vendor/chartjs",
+				},
 			],
 			hook: 'writeBundle' // TODO: is this the right hook?
 		})

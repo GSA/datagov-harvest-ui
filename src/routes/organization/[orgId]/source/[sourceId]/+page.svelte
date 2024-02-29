@@ -2,6 +2,11 @@
     /** @type {import('./$types').PageData} */
     export let data;
     console.log(data);
+    console.log(data.chartData);
+    import { Line } from 'svelte-chartjs';
+    import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale } from 'chart.js';
+
+    ChartJS.register(Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale);
 </script>
 
 <div class="wrapper">
@@ -17,7 +22,10 @@
             <p><b>Name:</b> {data.harvest_source.name}</p>
             <p><b>Url:</b> <a href={data.harvest_source.url}>{data.harvest_source.url}</a></p>
             <p><b>Notification Emails:</b> {data.harvest_source.notification_emails}</p>
-            <p><b>Organization Name:</b> {data.harvest_source.organization_name}</p>
+            <p>
+                <b>Organization Id:</b>
+                <a href="/organization/{data.harvest_source.organization_id}">{data.harvest_source.organization_id}</a>
+            </p>
             <p><b>Frequency:</b> {data.harvest_source.frequency}</p>
             <p><b>Schema Type:</b> {data.harvest_source.schema_type}</p>
             <p><b>Source Type:</b> {data.harvest_source.source_type}</p>
@@ -37,6 +45,7 @@
                 ></use>
             </svg>
         </p>
+        <Line data={data.chartData} />
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <div class="usa-table-container--scrollable" tabindex="0">
             <table class="usa-table usa-table--striped">
