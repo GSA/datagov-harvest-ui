@@ -4,12 +4,7 @@ import { fetchClient } from '$lib/fetch';
 export async function load({ fetch, params }) {
 	const harvest_source = await fetchClient(fetch, `harvest_source/${params.sourceId}`)
 	const harvest_jobs = await fetchClient(fetch, `harvest_job/?harvest_source_id=${params.sourceId}`)
-	let chartData = {
-		labels: [],
-		datasets: []
-	}
 	const rawChartData = harvest_jobs.reduce((accum, job) => {
-		chartData.labels.push(job.date_finished)
 		accum[0].data.push(job.records_added)
 		accum[1].data.push(job.records_deleted)
 		accum[2].data.push(job.records_errored)
@@ -46,6 +41,10 @@ export async function load({ fetch, params }) {
 		}
 	]
 	)
-	chartData.datasets = rawChartData
+	let chartData = {
+		labels: harvest_jobs.reduce((accum, job) => accum = [...accum, job.date_finished], []),
+		datasets: rawChartData
+	}
+	console.log(chartData)
 	return { harvest_source, harvest_jobs, chartData, params }
 }
