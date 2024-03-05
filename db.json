@@ -12,6 +12,19 @@
             "url": "http://example.com",
             "schema_type": "dcatus",
             "source_type": "datajson"
+        },
+        {
+            "id": "4df4dafa0-b6830-2d668b-0fcfb2ad44bfbcf943a5",
+            "name": "Harvest Source with no jobs",
+            "notification_emails": [
+                "admin@example.com",
+                "foo@example.com"
+            ],
+            "organization_id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
+            "frequency": "daily",
+            "url": "http://example.com",
+            "schema_type": "dcatus",
+            "source_type": "datajson"
         }
     ],
     "harvest_job": [
@@ -75,6 +88,10 @@
         {
             "id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
             "name": "Example Organization"
+        },
+        {
+            "id": "b0045e686-9ef8-d4f3-1169-25553090752",
+            "name": "Example Organization with no sources"
         }
     ]
 }

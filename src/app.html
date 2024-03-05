@@ -128,7 +128,7 @@
 					</li>
 				</ul>
 				<section aria-label="Search component">
-					<form class="usa-search usa-search--small" role="search">
+					<form class="usa-search usa-search--small" role="search" action="https://search.usa.gov/search">
 						<label class="usa-sr-only" for="search-field">Search</label>
 						<input class="usa-input" id="search-field" type="search" name="search" />
 						<button class="usa-button" type="submit">
@@ -140,9 +140,9 @@
 			</nav>
 		</div>
 	</header>
-	<!-- Nav bar -->
 	<div class="grid-container">
 		<div class="grid-row grid-gap">
+			<!-- Side bar -->
 			<div class="tablet:grid-col-3 margin-bottom-4 tablet:margin-bottom-0">
 				<nav aria-label="Side navigation,">
 					<ul class="usa-sidenav">
@@ -158,6 +158,7 @@
 					</ul>
 				</nav>
 			</div>
+			<!-- Main content -->
 			<div class="tablet:grid-col-8 margin-bottom-4 tablet:margin-bottom-0">
 				<div style="display: contents">%sveltekit.body%</div>
 			</div>
