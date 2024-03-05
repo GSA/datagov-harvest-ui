@@ -23,9 +23,10 @@
                 <caption> Harvest Sources for Org Id: {data.organization.id} </caption>
                 <thead>
                     <tr>
-                        <th data-sortable scope="col" role="columnheader">Id</th>
+                        <th data-sortable scope="col" role="columnheader">Health</th>
                         <th data-sortable scope="col" role="columnheader">Name</th>
                         <th data-sortable scope="col" role="columnheader">Url</th>
+                        <th data-sortable scope="col" role="columnheader">Id</th>
                         <th data-sortable scope="col" role="columnheader">Notification Emails</th>
                         <th data-sortable scope="col" role="columnheader">Organization Id</th>
                         <th data-sortable scope="col" role="columnheader">Frequency</th>
@@ -36,9 +37,26 @@
                 <tbody>
                     {#each data.harvest_sources as source}
                         <tr>
-                            <th scope="row"><a href="/organization/{data.params.orgId}/source/{source.id}">{source.id}</a></th>
+                            <th scope="row">
+                                <a
+                                    href="/organization/{data.params.orgId}/source/{source.id}/job/{data.harvest_jobs[
+                                        source.id
+                                    ][0].id}"
+                                >
+                                    <button
+                                        type="button"
+                                        class="usa-button usa-button{data.harvest_jobs[source.id][0].records_errored == 0
+                                            ? ''
+                                            : '--secondary'}"
+                                        >{data.harvest_jobs[source.id][0].records_errored == 0 ? 'Healthy' : 'Error'}</button
+                                    >
+                                </a>
+                            </th>
                             <td data-sort-value={source.date_created}> {source.name}</td>
                             <td data-sort-value={source.records_errored}><a href={source.url}>{source.url}</a></td>
+                            <td data-sort-value={source.id}
+                                ><a href="/organization/{data.params.orgId}/source/{source.id}">{source.id}</a></td
+                            >
                             <td data-sort-value={source.date_finished}>{source.notification_emails} </td>
                             <td data-sort-value={source.records_added}>{source.organization_id}</td>
                             <td data-sort-value={source.records_deleted}>{source.frequency}</td>

@@ -15,7 +15,12 @@
         <div class="job-config">
             <p><b>Date Created:</b> {data.harvest_job.date_created}</p>
             <p><b>Date Finished:</b> {data.harvest_job.date_finished}</p>
-            <p><b>Harvest Source Id:</b> {data.harvest_job.harvest_source_id}</p>
+            <p>
+                <b>Harvest Source Id:</b>
+                <a href="/organization/{data.params.orgId}/source/{data.params.sourceId}"
+                    >{data.harvest_job.harvest_source_id}</a
+                >
+            </p>
             <p><b>Id:</b> {data.harvest_job.id}</p>
             <p><b>Records Added:</b> {data.harvest_job.records_added}</p>
             <p><b>Records Deleted:</b> {data.harvest_job.records_deleted}</p>
