@@ -1,0 +1,97 @@
+{
+    "harvest_source": [
+        {
+            "id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
+            "name": "Example Harvest Source",
+            "notification_emails": [
+                "admin@example.com",
+                "foo@example.com"
+            ],
+            "organization_id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
+            "frequency": "daily",
+            "url": "http://example.com",
+            "schema_type": "dcatus",
+            "source_type": "datajson"
+        },
+        {
+            "id": "4df4dafa0-b6830-2d668b-0fcfb2ad44bfbcf943a5",
+            "name": "Harvest Source with no jobs",
+            "notification_emails": [
+                "admin@example.com",
+                "foo@example.com"
+            ],
+            "organization_id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
+            "frequency": "daily",
+            "url": "http://example.com",
+            "schema_type": "dcatus",
+            "source_type": "datajson"
+        }
+    ],
+    "harvest_job": [
+        {
+            "date_created": "Tues, 27 Feb 2024 14:20:45 GMT",
+            "date_finished": "Tues, 27 Feb 2024 14:20:45 GMT",
+            "harvest_source_id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
+            "id": "43b29488-d42f-4c85-a027-1cc517505524",
+            "records_added": 100,
+            "records_deleted": 5,
+            "records_errored": 3,
+            "records_ignored": 1,
+            "records_updated": 20
+        },
+        {
+            "date_created": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "date_finished": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "harvest_source_id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
+            "id": "43b29488-d42f-4c85-a027-1cc517505524",
+            "records_added": 50,
+            "records_deleted": 2,
+            "records_errored": 8,
+            "records_ignored": 10,
+            "records_updated": 20
+        },
+        {
+            "date_created": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "date_finished": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "harvest_source_id": "4ca2b39b-f9f0-41d4-89c2-7af300f7ba9a",
+            "id": "6689abce-2a43-41b3-bc17-a6db5f667942",
+            "records_added": 100,
+            "records_deleted": 5,
+            "records_errored": 3,
+            "records_ignored": 1,
+            "records_updated": 20
+        }
+    ],
+    "harvest_error": [
+        {
+            "date_created": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "harvest_job_id": "43b29488-d42f-4c85-a027-1cc517505524",
+            "id": "5972c38f-b14e-445d-99ec-2ca8fd9db0c9",
+            "message": "Invalid data format.",
+            "record_id": "record123",
+            "record_reported_id": "recordTUV",
+            "severity": "WARN",
+            "type": "Validation Error"
+        },
+        {
+            "date_created": "Mon, 26 Feb 2024 14:20:45 GMT",
+            "harvest_job_id": "43b29488-d42f-4c85-a027-1cc517505524",
+            "id": "817a9466-3090-4c85-8275-fcc3e330f67c",
+            "message": "Invalid data format.",
+            "record_id": "record456",
+            "record_reported_id": "recordXYZ",
+            "severity": "ERROR",
+            "type": "Validation Error"
+        }
+    ],
+    "organization": [
+        {
+            "id": "146cb9f3-282f-432b-8f9b-912f28e83ede",
+            "name": "Example Organization"
+        },
+        {
+            "id": "b0045e686-9ef8-d4f3-1169-25553090752",
+            "name": "Example Organization with no sources"
+        }
+    ]
+}
