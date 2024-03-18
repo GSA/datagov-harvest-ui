@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.5.3",
+		"@sveltejs/kit": "^2.5.4",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"concurrently": "^8.2.2",
 		"json-server": "^1.0.0-alpha.23",
