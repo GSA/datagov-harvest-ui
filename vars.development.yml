@@ -1,0 +1,6 @@
+app_name: datagov-harvest-ui
+space_name: development
+instances: 1
+memory_quota: 500M
+route-external: datagov-harvest-ui.app.cloud.gov
+route-internal: datagov-harvest-ui.apps.internal

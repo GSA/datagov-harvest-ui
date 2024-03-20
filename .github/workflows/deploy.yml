@@ -6,7 +6,8 @@ on:
     types:
       - completed
     branches: [main] # Redundant, workflow_run events are only triggered on default branch (`main`)
-
+  workflow_dispatch:
+    
 permissions:
   contents: read
 
@@ -34,17 +35,15 @@ jobs:
       - name: Deploy to cloud.gov
         uses: 18f/cg-deploy-action@main
         env:
-          MY_ENV_VAR: ${{ secrets.MY_ENV_VAR }}
-          SANDBOX_API_BASE_URL: ${{ secrets.SANDBOX_API_BASE_URL }}
+            FLASK_API_URL: ${{ vars.FLASK_API_URL }}
         with:
-          cf_username: ${{ secrets.CLOUDGOV_USERNAME }}
-          cf_password: ${{ secrets.CLOUDGOV_PASSWORD }}
+          cf_username: ${{secrets.CF_SERVICE_USER}}
+          cf_password: ${{secrets.CF_SERVICE_AUTH}}
           cf_org: gsa-datagov
           cf_space: development
           push_arguments: >-
-            --vars-file deploy-config/staging.yml
-            --var MY_ENV_VAR="$MY_ENV_VAR"
-            --var SANDBOX_API_BASE_URL="$SANDBOX_API_BASE_URL"
+            --vars-file vars.development.yml
+            --var FLASK_API_URL="$FLASK_API_URL"
 
   bail:
     runs-on: ubuntu-latest
