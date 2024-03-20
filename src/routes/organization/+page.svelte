@@ -6,6 +6,7 @@
     //     - do they contain info from last run harvest jobs?
 
     // allow for client side filtering
+    export let data;
 </script>
 
 <div class="wrapper">

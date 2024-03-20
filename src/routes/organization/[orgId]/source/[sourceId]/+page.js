@@ -2,8 +2,8 @@
 import { fetchClient } from '$lib/fetch';
 
 export async function load({ fetch, params }) {
-	const harvest_source = await fetchClient(fetch, `harvest_source/${params.sourceId}`)
-	const harvest_jobs = await fetchClient(fetch, `harvest_job/?harvest_source_id=${params.sourceId}`)
+	const harvest_source = await fetchClient(fetch, `harvestSource/${params.sourceId}`)
+	const harvest_jobs = await fetchClient(fetch, `harvestJobsBySource/${params.sourceId}`)
 	const rawChartData = harvest_jobs.reduce((accum, job) => {
 		accum[0].data.push(job.records_added)
 		accum[1].data.push(job.records_deleted)
