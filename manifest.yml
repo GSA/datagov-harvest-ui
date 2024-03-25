@@ -1,0 +1,16 @@
+applications:
+  - name: ((app-name))
+    buildpacks:
+      - https://github.com/cloudfoundry/nodejs-buildpack
+    routes:
+      - route: ((route-internal))
+      - route: ((route-external))
+    health-check-type: http
+    health-check-http-endpoint: /
+    health-check-invocation-timeout: 60
+    instances: ((instances))
+    disk_quota: 2G
+    memory: ((memory-quota))
+    command: node build
+    env:
+      FLASK_API_URL: ((flask-api-url))
