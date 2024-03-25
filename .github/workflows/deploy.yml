@@ -20,24 +20,21 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      - uses: ./.github/actions/setup-project
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
+      - run: npm i
       - run: npm run build
 
       - name: Deploy to cloud.gov
         uses: cloud-gov/cg-cli-tools@main
-        env:
-            FLASK_API_URL: ${{ vars.FLASK_API_URL }}
         with:
           cf_username: ${{secrets.CF_SERVICE_USER}}
           cf_password: ${{secrets.CF_SERVICE_AUTH}}
+          cf_vars_file: vars.development.yml
           cf_org: gsa-datagov
           cf_space: ${{vars.ENVIRONMENT_NAME}}
-          cf_vars_file: vars.${{vars.ENVIRONMENT_NAME}}.yml
 
   bail:
     runs-on: ubuntu-latest

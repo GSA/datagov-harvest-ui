@@ -32,7 +32,7 @@ export default defineConfig({
 					dest: "static/vendor/chartjs",
 				},
 			],
-			hook: 'writeBundle' // TODO: is this the right hook?
+			hook: 'buildStart'
 		})
 	]
 });
