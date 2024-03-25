@@ -1,21 +1,17 @@
 name: Cloud.gov deploy
 
 on:
-  workflow_run:
-    workflows: [Run checks]
-    types:
-      - completed
-    branches: [main] # Redundant, workflow_run events are only triggered on default branch (`main`)
+  push:
+    branches: [ "main" ]
   workflow_dispatch:
     
 permissions:
   contents: read
 
 jobs:
-  deploy:
+  deploy-dev:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
+    environment: development
     strategy:
       matrix:
         node-version: [20.x]
@@ -40,9 +36,9 @@ jobs:
           cf_username: ${{secrets.CF_SERVICE_USER}}
           cf_password: ${{secrets.CF_SERVICE_AUTH}}
           cf_org: gsa-datagov
-          cf_space: development
+          cf_space: ${{inputs.environment}}
           push_arguments: >-
-            --vars-file vars.development.yml
+            --vars-file vars.${{inputs.environment}}.yml
             --var FLASK_API_URL="$FLASK_API_URL"
 
   bail:
