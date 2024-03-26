@@ -5,6 +5,7 @@
  * @param {string} route
  * @param {string} param
  */
+
 export async function fetchClient(fetchLib, route) {
     return await fetchLib(`/api/${route}`)
         .then(function (response) {

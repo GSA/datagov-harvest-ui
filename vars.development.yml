@@ -2,6 +2,7 @@ app-name: datagov-harvest-ui
 space-name: development
 instances: 1
 memory-quota: 500M
+disk-quota: 750M
 route-external: datagov-harvest-ui.app.cloud.gov
 route-internal: datagov-harvest-ui.apps.internal
 flask-api-url: https://harvester-dev-datagov.app.cloud.gov/

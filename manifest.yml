@@ -9,7 +9,7 @@ applications:
     health-check-http-endpoint: /
     health-check-invocation-timeout: 60
     instances: ((instances))
-    disk_quota: 2G
+    disk_quota: ((disk-quota))
     memory: ((memory-quota))
     command: node build
     env:

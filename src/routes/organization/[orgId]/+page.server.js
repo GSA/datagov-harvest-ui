@@ -1,6 +1,6 @@
-/** @type {import('./$types').PageLoad} */
 import { fetchClient } from '$lib/fetch';
 
+/** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, params }) {
 	const organization = await fetchClient(fetch, `organization/${params.orgId}`)
 	const harvest_sources = await fetchClient(fetch, `harvestSourceByOrg/${params.orgId}`)

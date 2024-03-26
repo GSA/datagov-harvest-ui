@@ -1,4 +1,4 @@
-/** @type {import('./$types').PageLoad} */
+/** @type {import('./$types').PageServerLoad} */
 import { fetchClient } from '$lib/fetch';
 
 export async function load({ fetch, params }) {
