@@ -5,9 +5,7 @@ applications:
     routes:
       - route: ((route-internal))
       - route: ((route-external))
-    health-check-type: http
-    health-check-http-endpoint: /
-    health-check-invocation-timeout: 60
+    health-check-type: process
     instances: ((instances))
     disk_quota: 2G
     memory: ((memory-quota))
