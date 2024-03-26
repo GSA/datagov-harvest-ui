@@ -1,4 +1,4 @@
-import { PUBLIC_HARVEST_DB_URL } from '$env/static/public';
+// import { PUBLIC_API_ROUTE } from '$env/static/public';
 
 /**
  * @param {function} fetchLib
@@ -6,7 +6,7 @@ import { PUBLIC_HARVEST_DB_URL } from '$env/static/public';
  * @param {string} param
  */
 export async function fetchClient(fetchLib, route) {
-    return await fetchLib(`${PUBLIC_HARVEST_DB_URL}/${route}`)
+    return await fetchLib(`/api/${route}`)
         .then(function (response) {
             if (!response.ok) {
                 throw new Error("Not 2xx response", { cause: response });
@@ -19,3 +19,4 @@ export async function fetchClient(fetchLib, route) {
             return {}
         });
 }
+``

@@ -13,7 +13,8 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.5.4",
+		"@sveltejs/adapter-node": "^4.0.1",
+		"@sveltejs/kit": "^2.5.2",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"concurrently": "^8.2.2",
 		"json-server": "^1.0.0-alpha.23",
@@ -29,5 +30,11 @@
 		"@uswds/uswds": "3.8.0",
 		"chart.js": "^4.4.2",
 		"svelte-chartjs": "^3.1.5"
+	},
+	"engines": {
+		"node": ">20.0.0"
+	},
+	"optionalDependencies": {
+		"@rollup/rollup-linux-x64-gnu": "^4.9.6"
 	}
 }
