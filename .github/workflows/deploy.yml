@@ -22,10 +22,12 @@ jobs:
           fetch-depth: 2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
-        env:
-          FLASK_API_URL: ${{vars.FLASK_API_URL}}
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Create .env file
+        run: |
+          touch .env
+          echo FLASK_API_URL=${{vars.FLASK_API_URL}} >> .env
       - run: npm ci
       - run: npm run build
 
