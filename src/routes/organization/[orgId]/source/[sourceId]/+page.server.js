@@ -1,6 +1,6 @@
-/** @type {import('./$types').PageLoad} */
 import { fetchClient } from '$lib/fetch';
 
+/** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, params }) {
 	const harvest_source = await fetchClient(fetch, `harvestSource/${params.sourceId}`)
 	const harvest_jobs = await fetchClient(fetch, `harvestJobsBySource/${params.sourceId}`)

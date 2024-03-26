@@ -7,6 +7,7 @@
     //     - do they contain a count of harvest sources
 
     // allow for client side filtering
+    /** @type {import('./$types').PageData} */
     export let data;
     console.log(data);
 </script>
